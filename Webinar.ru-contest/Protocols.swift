@@ -15,7 +15,7 @@ protocol Singletonable {
 protocol Captureable {
     func stopCapture() -> CameraState
     func startCapture() -> CameraState
-    func setUpCaptureSession(view: UIView, captureQuality: String)
+    func setUpCaptureSession(view: UIView)
 }
 
 protocol Recordable {

@@ -27,9 +27,9 @@ final class VideoManager: NSObject, Singletonable, Captureable {
     
     required override init() {}
     
-    //MARK: Public properties
-    
     // MARK: Private properties
+    private var _focusMode: AVCaptureFocusMode = AVCaptureFocusMode.AutoFocus
+    private var _captureQuality: String = AVCaptureSessionPresetHigh
     private weak var _view: UIView? = nil
     private lazy var _captureSession: AVCaptureSession = { return AVCaptureSession() }()
     private lazy var _captureDevice: AVCaptureDevice! = {
@@ -53,14 +53,8 @@ final class VideoManager: NSObject, Singletonable, Captureable {
         return AVCaptureVideoPreviewLayer(session: self._captureSession)
     }()
     private lazy var _inputDevice: AVCaptureDeviceInput? = {
-        do {
-            let input = try AVCaptureDeviceInput(device: self._captureDevice)
-            return input
-        } catch let error as NSError {
-            // Process received error
-            print(error.localizedDescription)
-        }
-        return nil
+        let input: AVCaptureDeviceInput? = Exception.performThrowableWithReturnValue{try AVCaptureDeviceInput(device: self._captureDevice)} as? AVCaptureDeviceInput
+        return input
     }()
     
     
@@ -78,17 +72,36 @@ final class VideoManager: NSObject, Singletonable, Captureable {
         return CameraState.Capturing
     }
     
-    // Must called before start capture
-    func setUpCaptureSession(view: UIView, captureQuality: String = AVCaptureSessionPresetLow) {
-        _captureSession.sessionPreset = captureQuality
+    // Must be called before start capture
+    func setUpCaptureSession(view: UIView, captureQuality: String, focusMode: AVCaptureFocusMode) {
+        self._captureQuality = captureQuality
+        self._focusMode = focusMode
+        setUpCaptureSession(view)
+    }
+    
+    func setUpCaptureSession(view: UIView) {
+        _captureSession.sessionPreset = self._captureQuality
         self._view = view
+        configureDevice { () -> () in
+            self._captureDevice.focusMode = self._focusMode
+        }
     }
     
     // MARK: private functions
-    private func configureDevice() {
-        if let _ = _captureDevice {
-            Exception.performThrowable { try self._captureDevice.lockForConfiguration() }
+    func focusTo(value: Float) {
+        configureDevice { () -> () in
+            self._captureDevice.setFocusModeLockedWithLensPosition(value, completionHandler: nil)
         }
+    }
+    
+    private func configureDevice(configurationBlock: ()->()) {
+        guard let device = _captureDevice else { return }
+        Exception.performThrowable {
+            try device.lockForConfiguration()
+            configurationBlock()
+            device.unlockForConfiguration()
+        }
+            
     }
     
     private func addInputDevice() {

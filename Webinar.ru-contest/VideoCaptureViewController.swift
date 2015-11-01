@@ -13,6 +13,8 @@ class VideoCaptureViewController: UIViewController, Recordable {
     // MARK: Properties
     private var cameraState: CameraState = CameraState.NotUsed
     // MARK: @IBOutlets
+    @IBOutlet weak var toolbar: UIToolbar!
+    @IBOutlet weak var captureView: UIView!
     @IBOutlet weak var pauseButton: UIBarButtonItem!
     @IBOutlet weak var recordButton: UIBarButtonItem!
     @IBOutlet weak var captureButton: UIBarButtonItem!
@@ -21,6 +23,7 @@ class VideoCaptureViewController: UIViewController, Recordable {
     @IBAction func startCapture() {
         VideoManager.sharedManager.setUpCaptureSession(self.view)
         cameraState = VideoManager.sharedManager.startCapture()
+        self.view.bringSubviewToFront(toolbar)
         cameraState.setUpButtons(self)
     }
     @IBAction func startRecordingVideo(sender: AnyObject) {

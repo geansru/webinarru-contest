@@ -1,0 +1,291 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D56C50BC1BE5EB5E00A4FD86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56C50BB1BE5EB5E00A4FD86 /* AppDelegate.swift */; };
+		D56C50BE1BE5EB5E00A4FD86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56C50BD1BE5EB5E00A4FD86 /* ViewController.swift */; };
+		D56C50C11BE5EB5E00A4FD86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D56C50BF1BE5EB5E00A4FD86 /* Main.storyboard */; };
+		D56C50C31BE5EB5E00A4FD86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D56C50C21BE5EB5E00A4FD86 /* Assets.xcassets */; };
+		D56C50C61BE5EB5E00A4FD86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D56C50C41BE5EB5E00A4FD86 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D56C50B81BE5EB5A00A4FD86 /* Webinar.ru-contest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Webinar.ru-contest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D56C50BB1BE5EB5E00A4FD86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D56C50BD1BE5EB5E00A4FD86 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D56C50C01BE5EB5E00A4FD86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D56C50C21BE5EB5E00A4FD86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D56C50C51BE5EB5E00A4FD86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D56C50C71BE5EB5E00A4FD86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D56C50B51BE5EB5A00A4FD86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D56C50AF1BE5EB5A00A4FD86 = {
+			isa = PBXGroup;
+			children = (
+				D56C50BA1BE5EB5D00A4FD86 /* Webinar.ru-contest */,
+				D56C50B91BE5EB5A00A4FD86 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D56C50B91BE5EB5A00A4FD86 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D56C50B81BE5EB5A00A4FD86 /* Webinar.ru-contest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D56C50BA1BE5EB5D00A4FD86 /* Webinar.ru-contest */ = {
+			isa = PBXGroup;
+			children = (
+				D56C50BB1BE5EB5E00A4FD86 /* AppDelegate.swift */,
+				D56C50BD1BE5EB5E00A4FD86 /* ViewController.swift */,
+				D56C50BF1BE5EB5E00A4FD86 /* Main.storyboard */,
+				D56C50C21BE5EB5E00A4FD86 /* Assets.xcassets */,
+				D56C50C41BE5EB5E00A4FD86 /* LaunchScreen.storyboard */,
+				D56C50C71BE5EB5E00A4FD86 /* Info.plist */,
+			);
+			path = "Webinar.ru-contest";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D56C50B71BE5EB5A00A4FD86 /* Webinar.ru-contest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D56C50CA1BE5EB5E00A4FD86 /* Build configuration list for PBXNativeTarget "Webinar.ru-contest" */;
+			buildPhases = (
+				D56C50B41BE5EB5A00A4FD86 /* Sources */,
+				D56C50B51BE5EB5A00A4FD86 /* Frameworks */,
+				D56C50B61BE5EB5A00A4FD86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Webinar.ru-contest";
+			productName = "Webinar.ru-contest";
+			productReference = D56C50B81BE5EB5A00A4FD86 /* Webinar.ru-contest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D56C50B01BE5EB5A00A4FD86 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Dmitriy Roytman";
+				TargetAttributes = {
+					D56C50B71BE5EB5A00A4FD86 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+				};
+			};
+			buildConfigurationList = D56C50B31BE5EB5A00A4FD86 /* Build configuration list for PBXProject "Webinar.ru-contest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D56C50AF1BE5EB5A00A4FD86;
+			productRefGroup = D56C50B91BE5EB5A00A4FD86 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D56C50B71BE5EB5A00A4FD86 /* Webinar.ru-contest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D56C50B61BE5EB5A00A4FD86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D56C50C61BE5EB5E00A4FD86 /* LaunchScreen.storyboard in Resources */,
+				D56C50C31BE5EB5E00A4FD86 /* Assets.xcassets in Resources */,
+				D56C50C11BE5EB5E00A4FD86 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D56C50B41BE5EB5A00A4FD86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D56C50BE1BE5EB5E00A4FD86 /* ViewController.swift in Sources */,
+				D56C50BC1BE5EB5E00A4FD86 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D56C50BF1BE5EB5E00A4FD86 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D56C50C01BE5EB5E00A4FD86 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D56C50C41BE5EB5E00A4FD86 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D56C50C51BE5EB5E00A4FD86 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D56C50C81BE5EB5E00A4FD86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D56C50C91BE5EB5E00A4FD86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D56C50CB1BE5EB5E00A4FD86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Webinar.ru-contest/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.1appstudio.ios.Webinar-ru-contest";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D56C50CC1BE5EB5E00A4FD86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Webinar.ru-contest/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.1appstudio.ios.Webinar-ru-contest";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D56C50B31BE5EB5A00A4FD86 /* Build configuration list for PBXProject "Webinar.ru-contest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D56C50C81BE5EB5E00A4FD86 /* Debug */,
+				D56C50C91BE5EB5E00A4FD86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D56C50CA1BE5EB5E00A4FD86 /* Build configuration list for PBXNativeTarget "Webinar.ru-contest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D56C50CB1BE5EB5E00A4FD86 /* Debug */,
+				D56C50CC1BE5EB5E00A4FD86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D56C50B01BE5EB5A00A4FD86 /* Project object */;
+}

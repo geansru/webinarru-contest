@@ -21,6 +21,12 @@
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Arn-zH-FdW"/>
+                                    <barButtonItem systemItem="stop" id="pUx-nT-WM4">
+                                        <connections>
+                                            <action selector="stopRecordingVideo:" destination="BYZ-38-t0r" id="Z13-7T-X8N"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="bDo-hp-09Q"/>
                                     <barButtonItem systemItem="pause" id="HUK-Bh-sR2">
                                         <connections>
                                             <action selector="stopRecordingVideo:" destination="BYZ-38-t0r" id="nks-8x-iYV"/>
@@ -52,6 +58,7 @@
                         <outlet property="captureButton" destination="gOX-BD-vsP" id="Xhr-1S-nFB"/>
                         <outlet property="pauseButton" destination="HUK-Bh-sR2" id="kTS-TB-bgZ"/>
                         <outlet property="recordButton" destination="CyH-Ur-war" id="UU1-xb-7gf"/>
+                        <outlet property="stopButton" destination="pUx-nT-WM4" id="Sb7-EG-ctb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

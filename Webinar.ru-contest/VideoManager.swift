@@ -52,18 +52,32 @@ final class VideoManager: NSObject, Singletonable, Captureable {
     private lazy var _previewLayer: AVCaptureVideoPreviewLayer = {
         return AVCaptureVideoPreviewLayer(session: self._captureSession)
     }()
+    private lazy var _inputDevice: AVCaptureDeviceInput? = {
+        do {
+            let input = try AVCaptureDeviceInput(device: self._device)
+            return input
+        } catch let error as NSError {
+            // Process received error
+            print(error.localizedDescription)
+        }
+        return nil
+    }()
+    
     
     // MARK: Adopt Protocol Captureable
-    func stopCapture() {
+    func stopCapture() -> CameraState {
         _captureSession.stopRunning()
         removeSubLayer()
+        return CameraState.NotUsed
     }
     
-    func startCapture() {
+    func startCapture() -> CameraState {
         addSubLayer()
-        beginSession()
+        addInputDevice()
         _captureSession.startRunning()
+        return CameraState.Capturing
     }
+    
     func setUpCaptureSession(view: UIView, captureQuality: String = AVCaptureSessionPresetLow) {
         _captureSession.sessionPreset = captureQuality
         self._view = view
@@ -71,13 +85,14 @@ final class VideoManager: NSObject, Singletonable, Captureable {
     
     // MARK: private functions
     
-    private func beginSession() {
-        do {
-            let input = try AVCaptureDeviceInput(device: _device)
-            _captureSession.addInput(input)
-        } catch let error as NSError {
-            // Process received error
-            print(error.localizedDescription)
+    private func addInputDevice() {
+        if let _ = _inputDevice {
+            _captureSession.addInput(_inputDevice)
+        }
+    }
+    private func removeInputDevice() {
+        if let _ = _inputDevice {
+        _captureSession.removeInput(_inputDevice!)
         }
     }
     
@@ -88,6 +103,7 @@ final class VideoManager: NSObject, Singletonable, Captureable {
     private func removeSubLayer(layer: AVCaptureVideoPreviewLayer) {
         layer.removeFromSuperlayer()
         _view = nil
+        removeInputDevice()
     }
     
     private func addSubLayer() {

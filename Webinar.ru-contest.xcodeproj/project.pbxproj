@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D54650511BE6000900494C39 /* VideoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54650501BE6000900494C39 /* VideoManager.swift */; };
 		D54650531BE6005500494C39 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54650521BE6005500494C39 /* Protocols.swift */; };
+		D5697C4F1BE608C400CD1CD0 /* CameraState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5697C4E1BE608C400CD1CD0 /* CameraState.swift */; };
 		D56C50BC1BE5EB5E00A4FD86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56C50BB1BE5EB5E00A4FD86 /* AppDelegate.swift */; };
 		D56C50BE1BE5EB5E00A4FD86 /* VideoCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56C50BD1BE5EB5E00A4FD86 /* VideoCaptureViewController.swift */; };
 		D56C50C11BE5EB5E00A4FD86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D56C50BF1BE5EB5E00A4FD86 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		D54650501BE6000900494C39 /* VideoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoManager.swift; sourceTree = "<group>"; };
 		D54650521BE6005500494C39 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		D5697C4E1BE608C400CD1CD0 /* CameraState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraState.swift; sourceTree = "<group>"; };
 		D56C50B81BE5EB5A00A4FD86 /* Webinar.ru-contest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Webinar.ru-contest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D56C50BB1BE5EB5E00A4FD86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D56C50BD1BE5EB5E00A4FD86 /* VideoCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCaptureViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				D56C50BD1BE5EB5E00A4FD86 /* VideoCaptureViewController.swift */,
 				D54650501BE6000900494C39 /* VideoManager.swift */,
 				D54650521BE6005500494C39 /* Protocols.swift */,
+				D5697C4E1BE608C400CD1CD0 /* CameraState.swift */,
 				D56C50BF1BE5EB5E00A4FD86 /* Main.storyboard */,
 				D56C50C21BE5EB5E00A4FD86 /* Assets.xcassets */,
 				D56C50C41BE5EB5E00A4FD86 /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 			files = (
 				D56C50BE1BE5EB5E00A4FD86 /* VideoCaptureViewController.swift in Sources */,
 				D56C50BC1BE5EB5E00A4FD86 /* AppDelegate.swift in Sources */,
+				D5697C4F1BE608C400CD1CD0 /* CameraState.swift in Sources */,
 				D54650511BE6000900494C39 /* VideoManager.swift in Sources */,
 				D54650531BE6005500494C39 /* Protocols.swift in Sources */,
 			);

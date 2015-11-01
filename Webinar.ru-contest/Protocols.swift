@@ -13,7 +13,14 @@ protocol Singletonable {
 }
 
 protocol Captureable {
-    func stopCapture()
-    func startCapture()
+    func stopCapture() -> CameraState
+    func startCapture() -> CameraState
     func setUpCaptureSession(view: UIView, captureQuality: String)
+}
+
+protocol Recordable {
+    var pauseButton: UIBarButtonItem! { get }
+    var recordButton: UIBarButtonItem! { get }
+    var captureButton: UIBarButtonItem! { get }
+    var stopButton: UIBarButtonItem! { get }
 }

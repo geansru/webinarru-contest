@@ -15,18 +15,18 @@ enum CameraState {
         switch self {
         case .NotUsed:
             view.captureButton.enabled = true
-            view.pauseButton.enabled = false
-            view.recordButton.enabled = false
+            view.selectButton?.enabled = true
+            view.recordButton?.enabled = false
             view.stopButton.enabled = false
         case .Capturing, .Paused:
             view.captureButton.enabled = false
-            view.pauseButton.enabled = false
-            view.recordButton.enabled = true
+            view.selectButton?.enabled = false
+            view.recordButton?.enabled = true
             view.stopButton.enabled = true
         case .Recording:
             view.captureButton.enabled = false
-            view.pauseButton.enabled = true
-            view.recordButton.enabled = false
+            view.selectButton?.enabled = true
+            view.recordButton?.enabled = false
             view.stopButton.enabled = true
         }
     }

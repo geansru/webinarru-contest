@@ -19,7 +19,7 @@ protocol Captureable {
 }
 
 protocol Recordable {
-    var pauseButton: UIBarButtonItem! { get }
+    var selectButton: UIBarButtonItem! { get }
     var recordButton: UIBarButtonItem! { get }
     var captureButton: UIBarButtonItem! { get }
     var stopButton: UIBarButtonItem! { get }

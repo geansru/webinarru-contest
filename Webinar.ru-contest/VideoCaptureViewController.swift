@@ -8,6 +8,8 @@
 
 import UIKit
 import AVFoundation
+import MediaPlayer
+import MobileCoreServices
 
 class VideoCaptureViewController: UIViewController, Recordable {
     // MARK: Properties
@@ -35,10 +37,64 @@ class VideoCaptureViewController: UIViewController, Recordable {
         cameraState = VideoManager.sharedManager.stopCapture()
         cameraState.setUpButtons(self)
     }
+    
+    @IBAction func record() {
+        cameraState = CameraState.Recording
+        VideoManager.sharedManager.startCameraFromViewController(self, withDelegate: self)
+        cameraState.setUpButtons(self)
+    }
+    
+    @IBAction func selectAndPlay() {
+        cameraState = CameraState.NotUsed
+        VideoManager.sharedManager.startMediaBrowserFromViewController(self, usingDelegate: self)
+        cameraState.setUpButtons(self)
+    }
+    
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         cameraState.setUpButtons(self)
     }
 }
+
+// MARK: - UIImagePickerControllerDelegate
+extension VideoCaptureViewController: UIImagePickerControllerDelegate {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        guard let mediaType = info[UIImagePickerControllerMediaType] as? NSString else {
+            dismissViewControllerAnimated(true, completion: nil)
+            return
+        }
+        var block: (()->())? = nil
+        switch cameraState {
+        case .NotUsed:
+            block = { () -> Void in
+                if mediaType == kUTTypeMovie {
+                    let moviePlayer = MPMoviePlayerViewController(contentURL: info[UIImagePickerControllerMediaURL] as! NSURL)
+                    self.presentMoviePlayerViewControllerAnimated(moviePlayer)
+                }
+            }
+        case .Recording:
+            block = {
+                // Handle a movie capture
+                if mediaType == kUTTypeMovie {
+                    let path = (info[UIImagePickerControllerMediaURL] as! NSURL).path
+                    if UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(path!) {
+                        UISaveVideoAtPathToSavedPhotosAlbum(path!, self, nil, nil)
+                        print(path)
+                    }
+                }
+                            }
+        default: break
+        }
+        dismissViewControllerAnimated(true, completion: block)
+        self.cameraState = CameraState.NotUsed
+        self.cameraState.setUpButtons(self)
+    }
+}
+
+// MARK: - UINavigationControllerDelegate
+extension VideoCaptureViewController: UINavigationControllerDelegate {
+    
+}
+
 

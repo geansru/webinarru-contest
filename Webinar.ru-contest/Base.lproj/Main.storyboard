@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1zJ-k4-Cnh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1pV-Mr-CBQ">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -20,20 +20,29 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fNm-ta-HG8">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
+                                    <barButtonItem systemItem="play" id="4zT-P3-KBT">
+                                        <connections>
+                                            <action selector="selectAndPlay" destination="BYZ-38-t0r" id="g1m-ln-NJa"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="MUl-tP-WC6"/>
-                                    <barButtonItem systemItem="stop" id="pUx-nT-WM4">
+                                    <barButtonItem title="Stop Capture" id="pUx-nT-WM4">
                                         <connections>
                                             <action selector="stopCaptureVideo" destination="BYZ-38-t0r" id="qdm-6H-JU5"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="bDo-hp-09Q"/>
-                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="wHE-Br-h8X"/>
-                                    <barButtonItem systemItem="camera" id="gOX-BD-vsP">
+                                    <barButtonItem title="Capture" id="gOX-BD-vsP">
                                         <connections>
                                             <action selector="startCapture" destination="BYZ-38-t0r" id="8QO-b6-Dr9"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="YMx-bs-4MO"/>
+                                    <barButtonItem systemItem="camera" id="WUJ-RH-wWr">
+                                        <connections>
+                                            <action selector="record" destination="BYZ-38-t0r" id="5xp-lb-p9y"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -44,15 +53,11 @@
                             <constraint firstAttribute="trailing" secondItem="fNm-ta-HG8" secondAttribute="trailing" id="geM-zl-JDJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Video Capture" id="R7v-sG-LCf">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="DXM-oq-ese">
-                            <connections>
-                                <action selector="exit:" destination="BYZ-38-t0r" id="VCA-1E-DeT"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Video Capture" id="R7v-sG-LCf"/>
                     <connections>
                         <outlet property="captureButton" destination="gOX-BD-vsP" id="Xhr-1S-nFB"/>
+                        <outlet property="recordButton" destination="4zT-P3-KBT" id="cFV-Tv-g5C"/>
+                        <outlet property="selectButton" destination="WUJ-RH-wWr" id="C3t-HI-PEd"/>
                         <outlet property="stopButton" destination="pUx-nT-WM4" id="Sb7-EG-ctb"/>
                         <outlet property="toolbar" destination="fNm-ta-HG8" id="LaZ-u0-hJC"/>
                     </connections>
@@ -60,74 +65,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3068" y="100"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="dyD-qY-nOe">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1zJ-k4-Cnh" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SiV-xN-ikJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="KYF-6H-HRm" kind="relationship" relationship="rootViewController" id="UJH-xt-UWz"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EtC-VS-ZXY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1451" y="960"/>
-        </scene>
-        <!--Menu-->
-        <scene sceneID="rhq-jt-RPq">
-            <objects>
-                <viewController id="KYF-6H-HRm" customClass="PlayVideoViewController" customModule="Webinar_ru_contest" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="HIM-aE-wr5"/>
-                        <viewControllerLayoutGuide type="bottom" id="rpA-8v-qMr"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="TJ2-jc-BgL">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tp5-HU-48I">
-                                <rect key="frame" x="222" y="285" width="155" height="30"/>
-                                <state key="normal" title="Record and save video"/>
-                                <connections>
-                                    <action selector="recordAndSaveVideo:" destination="KYF-6H-HRm" eventType="touchUpInside" id="0iX-Eg-HLm"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46N-68-WHi">
-                                <rect key="frame" x="226" y="323" width="147" height="30"/>
-                                <state key="normal" title="Select and play video"/>
-                                <connections>
-                                    <action selector="selectAndPlayVideo" destination="KYF-6H-HRm" eventType="touchUpInside" id="1nR-Oj-nEc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbu-1U-ZUS">
-                                <rect key="frame" x="250" y="247" width="99" height="30"/>
-                                <state key="normal" title="Capture Video"/>
-                                <connections>
-                                    <segue destination="1pV-Mr-CBQ" kind="show" action="showDetailViewController:sender:" id="8G7-KM-0Nl"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Tp5-HU-48I" firstAttribute="top" secondItem="gbu-1U-ZUS" secondAttribute="bottom" constant="8" id="0s0-tW-M8Z"/>
-                            <constraint firstItem="46N-68-WHi" firstAttribute="centerX" secondItem="TJ2-jc-BgL" secondAttribute="centerX" id="EFZ-8s-GNz"/>
-                            <constraint firstItem="Tp5-HU-48I" firstAttribute="centerY" secondItem="TJ2-jc-BgL" secondAttribute="centerY" id="EJV-9x-c9p"/>
-                            <constraint firstItem="46N-68-WHi" firstAttribute="top" secondItem="Tp5-HU-48I" secondAttribute="bottom" constant="8" id="Fam-OV-ZbD"/>
-                            <constraint firstItem="gbu-1U-ZUS" firstAttribute="centerX" secondItem="TJ2-jc-BgL" secondAttribute="centerX" id="K2d-QF-Qo9"/>
-                            <constraint firstItem="Tp5-HU-48I" firstAttribute="centerX" secondItem="TJ2-jc-BgL" secondAttribute="centerX" id="QwO-rC-31O"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Menu" id="p8x-ul-U1i"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MAL-vq-8H5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2134" y="960"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Eao-SC-fGH">

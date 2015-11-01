@@ -8,6 +8,8 @@
 
 import UIKit
 import AVFoundation
+import MediaPlayer
+import MobileCoreServices
 
 final class VideoManager: NSObject, Singletonable, Captureable {
     //MARK: Singleton
@@ -57,7 +59,37 @@ final class VideoManager: NSObject, Singletonable, Captureable {
         return input
     }()
     
+    // MARK: Public methods for record and play recorder video
+    func startCameraFromViewController(viewController: UIViewController, withDelegate delegate: protocol<UIImagePickerControllerDelegate, UINavigationControllerDelegate>) -> Bool {
+        if UIImagePickerController.isSourceTypeAvailable(.Camera) == false {
+            return false
+        }
+        
+        let cameraController = UIImagePickerController()
+        cameraController.sourceType = .Camera
+        cameraController.mediaTypes = [kUTTypeMovie as String]
+        cameraController.allowsEditing = false
+        cameraController.delegate = delegate
+        
+        viewController.presentViewController(cameraController, animated: true, completion: nil)
+        return true
+    }
     
+    func startMediaBrowserFromViewController(viewController: UIViewController, usingDelegate delegate: protocol<UINavigationControllerDelegate, UIImagePickerControllerDelegate>) -> Bool {
+        if !UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum) {
+            return false
+        }
+        
+        let mediaUI = UIImagePickerController()
+        mediaUI.sourceType = .SavedPhotosAlbum
+        mediaUI.mediaTypes = [kUTTypeMovie as String]
+        mediaUI.allowsEditing = true
+        mediaUI.delegate = delegate
+        
+        viewController.presentViewController(mediaUI, animated: true, completion: nil)
+        return true
+    }
+
     // MARK: Adopt Protocol Captureable
     func stopCapture() -> CameraState {
         _captureSession.stopRunning()

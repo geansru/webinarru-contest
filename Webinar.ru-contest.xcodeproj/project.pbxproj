@@ -11,7 +11,7 @@
 		D54650531BE6005500494C39 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54650521BE6005500494C39 /* Protocols.swift */; };
 		D5697C4F1BE608C400CD1CD0 /* CameraState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5697C4E1BE608C400CD1CD0 /* CameraState.swift */; };
 		D5697C511BE6131F00CD1CD0 /* Exception.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5697C501BE6131F00CD1CD0 /* Exception.swift */; };
-		D5697C571BE6602C00CD1CD0 /* PlayVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5697C561BE6602C00CD1CD0 /* PlayVideoViewController.swift */; };
+		D5697C5B1BE67DDD00CD1CD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5697C5A1BE67DDD00CD1CD0 /* LaunchScreen.storyboard */; };
 		D56C50BC1BE5EB5E00A4FD86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56C50BB1BE5EB5E00A4FD86 /* AppDelegate.swift */; };
 		D56C50BE1BE5EB5E00A4FD86 /* VideoCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56C50BD1BE5EB5E00A4FD86 /* VideoCaptureViewController.swift */; };
 		D56C50C11BE5EB5E00A4FD86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D56C50BF1BE5EB5E00A4FD86 /* Main.storyboard */; };
@@ -23,7 +23,7 @@
 		D54650521BE6005500494C39 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		D5697C4E1BE608C400CD1CD0 /* CameraState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraState.swift; sourceTree = "<group>"; };
 		D5697C501BE6131F00CD1CD0 /* Exception.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exception.swift; sourceTree = "<group>"; };
-		D5697C561BE6602C00CD1CD0 /* PlayVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayVideoViewController.swift; sourceTree = "<group>"; };
+		D5697C5A1BE67DDD00CD1CD0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D56C50B81BE5EB5A00A4FD86 /* Webinar.ru-contest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Webinar.ru-contest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D56C50BB1BE5EB5E00A4FD86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D56C50BD1BE5EB5E00A4FD86 /* VideoCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCaptureViewController.swift; sourceTree = "<group>"; };
@@ -65,7 +65,6 @@
 			isa = PBXGroup;
 			children = (
 				D56C50BD1BE5EB5E00A4FD86 /* VideoCaptureViewController.swift */,
-				D5697C561BE6602C00CD1CD0 /* PlayVideoViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -103,6 +102,7 @@
 				D5697C521BE65FD100CD1CD0 /* Managers */,
 				D5697C531BE65FDC00CD1CD0 /* Helpers */,
 				D56C50BF1BE5EB5E00A4FD86 /* Main.storyboard */,
+				D5697C5A1BE67DDD00CD1CD0 /* LaunchScreen.storyboard */,
 				D5697C551BE6600300CD1CD0 /* Resources */,
 			);
 			path = "Webinar.ru-contest";
@@ -166,6 +166,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5697C5B1BE67DDD00CD1CD0 /* LaunchScreen.storyboard in Resources */,
 				D56C50C31BE5EB5E00A4FD86 /* Assets.xcassets in Resources */,
 				D56C50C11BE5EB5E00A4FD86 /* Main.storyboard in Resources */,
 			);
@@ -183,7 +184,6 @@
 				D5697C4F1BE608C400CD1CD0 /* CameraState.swift in Sources */,
 				D5697C511BE6131F00CD1CD0 /* Exception.swift in Sources */,
 				D54650511BE6000900494C39 /* VideoManager.swift in Sources */,
-				D5697C571BE6602C00CD1CD0 /* PlayVideoViewController.swift in Sources */,
 				D54650531BE6005500494C39 /* Protocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

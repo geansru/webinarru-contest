@@ -9,25 +9,20 @@
 import UIKit
 
 enum CameraState {
-    case NotUsed, Capturing, Recording, Paused
+    case NotUsed, Capturing, Recording, Listing
     
-    func setUpButtons(view: Recordable) {
+    func setUpButtons(viewController: Recordable) {
         switch self {
-        case .NotUsed:
-            view.captureButton.enabled = true
-            view.selectButton?.enabled = true
-            view.recordButton?.enabled = false
-            view.stopButton.enabled = false
-        case .Capturing, .Paused:
-            view.captureButton.enabled = false
-            view.selectButton?.enabled = false
-            view.recordButton?.enabled = true
-            view.stopButton.enabled = true
-        case .Recording:
-            view.captureButton.enabled = false
-            view.selectButton?.enabled = true
-            view.recordButton?.enabled = false
-            view.stopButton.enabled = true
+        case .NotUsed, .Recording, .Listing:
+            viewController.captureButton.enabled = true
+            viewController.selectButton?.enabled = true
+            viewController.recordButton?.enabled = true
+            viewController.stopButton.enabled = false
+        case .Capturing:
+            viewController.captureButton.enabled = false
+            viewController.selectButton?.enabled = false
+            viewController.recordButton?.enabled = false
+            viewController.stopButton.enabled = true
         }
     }
 }

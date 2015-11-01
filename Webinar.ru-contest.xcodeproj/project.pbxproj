@@ -7,17 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D54650511BE6000900494C39 /* VideoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54650501BE6000900494C39 /* VideoManager.swift */; };
+		D54650531BE6005500494C39 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54650521BE6005500494C39 /* Protocols.swift */; };
 		D56C50BC1BE5EB5E00A4FD86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56C50BB1BE5EB5E00A4FD86 /* AppDelegate.swift */; };
-		D56C50BE1BE5EB5E00A4FD86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56C50BD1BE5EB5E00A4FD86 /* ViewController.swift */; };
+		D56C50BE1BE5EB5E00A4FD86 /* VideoCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56C50BD1BE5EB5E00A4FD86 /* VideoCaptureViewController.swift */; };
 		D56C50C11BE5EB5E00A4FD86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D56C50BF1BE5EB5E00A4FD86 /* Main.storyboard */; };
 		D56C50C31BE5EB5E00A4FD86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D56C50C21BE5EB5E00A4FD86 /* Assets.xcassets */; };
 		D56C50C61BE5EB5E00A4FD86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D56C50C41BE5EB5E00A4FD86 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D54650501BE6000900494C39 /* VideoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoManager.swift; sourceTree = "<group>"; };
+		D54650521BE6005500494C39 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		D56C50B81BE5EB5A00A4FD86 /* Webinar.ru-contest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Webinar.ru-contest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D56C50BB1BE5EB5E00A4FD86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D56C50BD1BE5EB5E00A4FD86 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D56C50BD1BE5EB5E00A4FD86 /* VideoCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCaptureViewController.swift; sourceTree = "<group>"; };
 		D56C50C01BE5EB5E00A4FD86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D56C50C21BE5EB5E00A4FD86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D56C50C51BE5EB5E00A4FD86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,7 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				D56C50BB1BE5EB5E00A4FD86 /* AppDelegate.swift */,
-				D56C50BD1BE5EB5E00A4FD86 /* ViewController.swift */,
+				D56C50BD1BE5EB5E00A4FD86 /* VideoCaptureViewController.swift */,
+				D54650501BE6000900494C39 /* VideoManager.swift */,
+				D54650521BE6005500494C39 /* Protocols.swift */,
 				D56C50BF1BE5EB5E00A4FD86 /* Main.storyboard */,
 				D56C50C21BE5EB5E00A4FD86 /* Assets.xcassets */,
 				D56C50C41BE5EB5E00A4FD86 /* LaunchScreen.storyboard */,
@@ -135,8 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D56C50BE1BE5EB5E00A4FD86 /* ViewController.swift in Sources */,
+				D56C50BE1BE5EB5E00A4FD86 /* VideoCaptureViewController.swift in Sources */,
 				D56C50BC1BE5EB5E00A4FD86 /* AppDelegate.swift in Sources */,
+				D54650511BE6000900494C39 /* VideoManager.swift in Sources */,
+				D54650531BE6005500494C39 /* Protocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +292,7 @@
 				D56C50CC1BE5EB5E00A4FD86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

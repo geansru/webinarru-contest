@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Video Capture View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="VideoCaptureViewController" customModule="Webinar_ru_contest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,8 +16,43 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fNm-ta-HG8">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Arn-zH-FdW"/>
+                                    <barButtonItem systemItem="pause" id="HUK-Bh-sR2">
+                                        <connections>
+                                            <action selector="stopRecordingVideo:" destination="BYZ-38-t0r" id="nks-8x-iYV"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="pNf-Gm-kCG"/>
+                                    <barButtonItem systemItem="play" id="CyH-Ur-war">
+                                        <connections>
+                                            <action selector="startRecordingVideo:" destination="BYZ-38-t0r" id="Od5-0D-grL"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="wHE-Br-h8X"/>
+                                    <barButtonItem systemItem="camera" id="gOX-BD-vsP">
+                                        <connections>
+                                            <action selector="startCapture" destination="BYZ-38-t0r" id="8QO-b6-Dr9"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fNm-ta-HG8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="GXg-ig-dkE"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fNm-ta-HG8" secondAttribute="bottom" id="MD0-oN-y2y"/>
+                            <constraint firstAttribute="trailing" secondItem="fNm-ta-HG8" secondAttribute="trailing" id="geM-zl-JDJ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="captureButton" destination="gOX-BD-vsP" id="Xhr-1S-nFB"/>
+                        <outlet property="pauseButton" destination="HUK-Bh-sR2" id="kTS-TB-bgZ"/>
+                        <outlet property="recordButton" destination="CyH-Ur-war" id="UU1-xb-7gf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

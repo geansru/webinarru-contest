@@ -32,7 +32,7 @@ final class VideoManager: NSObject, Singletonable, Captureable {
     // MARK: Private properties
     private weak var _view: UIView? = nil
     private lazy var _captureSession: AVCaptureSession = { return AVCaptureSession() }()
-    private lazy var _device: AVCaptureDevice! = {
+    private lazy var _captureDevice: AVCaptureDevice! = {
         guard let allDevices = AVCaptureDevice.devices() as? [AVCaptureDevice] else {
             return nil
         }
@@ -54,7 +54,7 @@ final class VideoManager: NSObject, Singletonable, Captureable {
     }()
     private lazy var _inputDevice: AVCaptureDeviceInput? = {
         do {
-            let input = try AVCaptureDeviceInput(device: self._device)
+            let input = try AVCaptureDeviceInput(device: self._captureDevice)
             return input
         } catch let error as NSError {
             // Process received error
@@ -78,12 +78,18 @@ final class VideoManager: NSObject, Singletonable, Captureable {
         return CameraState.Capturing
     }
     
+    // Must called before start capture
     func setUpCaptureSession(view: UIView, captureQuality: String = AVCaptureSessionPresetLow) {
         _captureSession.sessionPreset = captureQuality
         self._view = view
     }
     
     // MARK: private functions
+    private func configureDevice() {
+        if let _ = _captureDevice {
+            Exception.performThrowable { try self._captureDevice.lockForConfiguration() }
+        }
+    }
     
     private func addInputDevice() {
         if let _ = _inputDevice {
